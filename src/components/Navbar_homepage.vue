@@ -91,6 +91,11 @@ export default {
                 }
             }
         }
+    }
 
+    @media (max-width: 60em) {
+        nav {
+            display: none;
+        }
     }
 </style>

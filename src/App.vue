@@ -39,6 +39,9 @@ a {
     --highlight-color: #ffffff;
 
     --navbar-height: 70px;
+
+    --breakpoint-small: 40em;
+    --breakpoint-medium: 60em;
 }
 
 .button_type_1 {
