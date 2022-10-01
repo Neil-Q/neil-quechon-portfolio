@@ -7,6 +7,11 @@
             <HomepageSkills/>
 
             <section id="projects">
+                <ProjectPresentation 
+                    v-for="(project, index) in projects"
+                    :key="index"
+                    :title="project.title"
+                />
             </section>
 
             <section id="contact">
@@ -19,10 +24,11 @@
 </template>
 
 <script>
-    import NavbarHomepage from "@/components/Navbar_homepage.vue";
-    import HomepageHeader from "@/components/Homepage_header.vue";
-    import HomepageAbout  from "@/components/Homepage_about.vue";
-    import HomepageSkills from "@/components/Homepage_skills.vue";
+    import NavbarHomepage       from "@/components/Navbar_homepage.vue";
+    import HomepageHeader       from "@/components/Homepage_header.vue";
+    import HomepageAbout        from "@/components/Homepage_about.vue";
+    import HomepageSkills       from "@/components/Homepage_skills.vue";
+    import ProjectPresentation  from "@/components/Project_presentation.vue";
 
     export default {
         name: 'Home',
@@ -30,8 +36,35 @@
             NavbarHomepage,
             HomepageHeader,
             HomepageAbout,
-            HomepageSkills
-        } 
+            HomepageSkills,
+            ProjectPresentation
+        },
+        data() {
+            return {
+                projects: [
+                    {
+                        title: "Mudo Kwan Challandais",
+                        presentation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        tags: ["vue.js", "GSAP", "heroku"],
+                        caseStudylink: null,
+                        liveSiteLink: null,
+                        gitRepoLink: "https://github.com/Neil-Q/Mudo-Kwan-Challandais",
+                        svgIllustration: null,
+                        image: null
+                    },
+                    {
+                        title: "Emblem Wars",
+                        presentation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        tags: ["vue.js", "GSAP", "heroku"],
+                        caseStudylink: null,
+                        liveSiteLink: null,
+                        gitRepoLink: "https://github.com/Neil-Q/Mudo-Kwan-Challandais",
+                        svgIllustration: null,
+                        image: null
+                    }
+                ]
+            }
+        }
     }
 </script>
 
