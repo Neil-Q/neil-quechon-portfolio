@@ -102,11 +102,11 @@ export default {
 
     @media (min-width: 40em) {
         .skill_item {
-            width: 50%;
+            width: 30%;
         }
     }
 
-    @media (min-width: 60em) {
+    @media (min-width: 50em) {
         .skill_item {
             width: 25%;
         }
