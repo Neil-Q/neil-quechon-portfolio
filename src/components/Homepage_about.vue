@@ -2,7 +2,7 @@
     <section id="about">
         <h3><span class="text_colorized">01. </span>A PROPOS DE MOI</h3>
 
-        <dir id="about_presentation">
+        <div id="about_presentation">
             <div id="about_presentation_text">
                 <h4>Titre Lorem Ipsum</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -12,7 +12,7 @@
             </div>
             <div id="temp_picture">
             </div>
-        </dir>
+        </div>
     </section>
 </template>
 

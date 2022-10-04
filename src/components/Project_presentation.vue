@@ -7,14 +7,14 @@
             </svg>
         </div>
 
-        <div class="presentation">
+        <div class="presentation shadow_boxed_light">
             <h4>{{ title }}</h4>
             <ul class="tags_list">
                 <li v-for="tag in tags" :key="tag">{{ tag }}</li>
             </ul>
             <p class="description">{{ presentation }}</p>
             <div class="links_container">
-                <a v-if="caseStudyLink" class="case_study" href="#">
+                <a v-if="caseStudyLink" id="case_study_link" class="button_solid" href="#">
                     Etude de conception
                 </a>
                 <a v-if="liveSiteLink" class="live_site_link" href="#">
@@ -87,17 +87,9 @@ export default {
         height: 3em;
     }
 
-    .case_study {
-        display: block;
-        color: var(--bg-color);
+    #case_study_link {
         padding: 0.5em 1em;
-        background-color: var(--primary-color);
-        border-radius: 4px;
         margin: auto 1em auto 0;
-
-        &:hover {
-            background-color: var(--primary-color-soft);
-        }
     }
 
     .live_site_link, .git_link{
@@ -105,7 +97,6 @@ export default {
         align-items: center;
         height: 100%;
         width: 3em;
-        //margin: 0 1em;
 
         svg {
             color: var(--primary-color);
@@ -119,7 +110,7 @@ export default {
     }
 
     h4 {
-        font-size: 1.9em;
+        font-size: clamp(1.5em, 2.5vw, 1.9em);
         margin: 0;
     }
 
@@ -164,7 +155,9 @@ export default {
         }
 
         .reversed {
-            text-align: right;
+            h {
+                text-align: right;
+            }
 
             .illustration {
                 grid-column-start: 1;

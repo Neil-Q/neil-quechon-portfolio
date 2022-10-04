@@ -18,7 +18,7 @@
                     <a href="#">Contact</a>
                 </li>
             </ol>
-            <div class="button_type_1 cv-button">
+            <div class="button_hollow cv-button">
                 <a href="#">Mon CV</a>
             </div>
         </div>
@@ -34,7 +34,7 @@ export default {
 <style lang="scss">
     nav {
         display: flex;
-        position: relative;
+        position: absolute;
         z-index: 12;
         box-sizing: border-box;
         flex-direction: row;
@@ -74,7 +74,7 @@ export default {
 
         li {
             display: flex;
-            margin: 0px 20px;
+            margin-right: clamp(0.6em, 2.5vw, 40px);
             counter-increment: nav-link;
 
             a {

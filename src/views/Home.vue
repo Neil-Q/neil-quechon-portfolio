@@ -23,12 +23,13 @@
             </section>
 
             <section id="contact">
+                <h3><span class="text_colorized">04. </span>CONTACTEZ MOI</h3>
+                <ContactForm :withText="true"/>
             </section>
-
-            <footer>
-            </footer>
         </main>
     </div>
+    <footer>
+    </footer>
 </template>
 
 <script>
@@ -37,6 +38,7 @@
     import HomepageAbout        from "@/components/Homepage_about.vue";
     import HomepageSkills       from "@/components/Homepage_skills.vue";
     import ProjectPresentation  from "@/components/Project_presentation.vue";
+    import ContactForm          from "@/components/Contact_form.vue";
 
     export default {
         name: 'Home',
@@ -45,7 +47,8 @@
             HomepageHeader,
             HomepageAbout,
             HomepageSkills,
-            ProjectPresentation
+            ProjectPresentation,
+            ContactForm
         },
         data() {
             return {
@@ -79,8 +82,6 @@
             for (let i = 0; i < projects.length; i++) {
                 if (i%2 != 0) projects[i].classList.add("reversed");
             }
-
-            console.log(projects);
         }
     }
 </script>
@@ -91,13 +92,19 @@
     }
 
     #content {
-        position: absolute;
         box-sizing: border-box;
         top: 100vh;
         // background-color: red;
         width: 100%;
         max-width: 100%;
         padding: 0 1em;
+    }
+
+    #contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
     }
 
     main {
@@ -109,6 +116,18 @@
     }
 
     h3 {
-        font-size: clamp(1.5em, 3vw, 2.5em);
+        font-size: clamp(2em, 3vw, 2.5em);
+    }
+
+    footer {
+        height: 10em;
+        width: 100%;
+        background-color: grey;
+    }
+
+    @media(min-width: 40em) {
+        #content {
+            padding: 0 2em;
+        }
     }
 </style>

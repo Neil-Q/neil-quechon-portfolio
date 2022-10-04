@@ -3,12 +3,12 @@
         <canvas></canvas>
         <section class="hero">
             <p class="text_colorized" id="hello_world">&lt;hello world&gt;</p>
-            <h1>Je suis <span class="text_colorized">Neil Quéchon</span></h1>
-            <h2 class="text_soft">Développeur web <span class="text_colorized_soft">front-end</span></h2>
+            <h1>Je suis <span class="text_colorized">Neil</span></h1>
+            <h2 class="text_soft">Développeur <span class="text_colorized_soft">front-end</span></h2>
             <p>J’aime créer des outils et expériences interactives et dynamiques. Apprendre tous les jours, sur de nombreux sujets, fait partie de ma nature. <br>
             Si je ne suis pas derrière mon ordinateur, vous me trouverez sûrement sur les tatamis.
             </p>
-            <div class="button_type_1">
+            <div class="button_hollow">
                 <a id="hire_me" href="#">Engagez moi !</a>
             </div>
         </section>
@@ -26,8 +26,7 @@ export default {
         display: flex;
         width: 100%;
         height: 100vh;
-        position: absolute;
-        z-index: 1;
+        
         top: 0;
     }
 
@@ -62,7 +61,8 @@ export default {
 
     #hello_world {
         font-weight: bold;
-        font-size: var(--font-sz-lg);
+        font-size: 2em;
+        margin-bottom: 0;
     }
 
     #hire_me {
