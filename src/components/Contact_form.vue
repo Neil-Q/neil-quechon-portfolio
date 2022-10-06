@@ -35,7 +35,6 @@ export default {
         display: flex;
         width: 100%;
         flex-direction: column-reverse;
-        align-items: center;
         margin: 3em 0;
     }
 
@@ -83,8 +82,8 @@ export default {
     }
 
     #coffee_text {
-        text-align: left;
-        padding-left: 2em;
+        box-sizing: border-box;
+        
         width: 100%;
     }
 
@@ -103,6 +102,8 @@ export default {
         #coffee_text {
             border: none;
             min-width: 50%;
+            text-align: left;
+            padding-left: 2em;
         }
     }
 </style>

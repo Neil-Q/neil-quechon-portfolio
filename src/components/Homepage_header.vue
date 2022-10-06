@@ -47,8 +47,14 @@ export default {
         margin: auto;
         text-align: left;
 
-        h1, h2 {
+        h1 {
             font-size: clamp(40px, 4vw, 60px);
+            font-weight: bold;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: clamp(30px, 3vw, 45px);
             font-weight: bold;
             margin: 0;
         }

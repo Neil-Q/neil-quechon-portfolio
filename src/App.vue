@@ -108,7 +108,7 @@ a {
                 0 4px 4px rgba(0,0,0,0.12);
 
     &_light {
-        box-shadow: 0 20px 30px -15px rgba(0,0,0,0.12);
+        box-shadow: 0 12px 10px -15px rgba(0,0,0,0.12);
     }
 
     &_strong {
