@@ -88,7 +88,6 @@ export default {
     }
 
     #case_study_link {
-        padding: 0.5em 1em;
         margin: auto 1em auto 0;
     }
 

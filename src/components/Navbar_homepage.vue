@@ -18,9 +18,7 @@
                     <a href="#">Contact</a>
                 </li>
             </ol>
-            <div class="button_hollow cv-button">
-                <a href="#">Mon CV</a>
-            </div>
+            <a class="button_hollow cv-button" href="#">Mon CV</a>
         </div>
         <button id="burger_nav" v-on:click="toggleOverlayNavigation">
             <div></div>
@@ -152,9 +150,8 @@ export default {
 
     .cv-button {
         margin-left: 25px;
-        a {
-            margin: 5px 30px;
-        }
+        text-align: center;
+        padding: 0.3em 2.5em;
     }
 
     .logo {

@@ -8,9 +8,7 @@
             <p>J’aime créer des outils et expériences interactives et dynamiques. Apprendre tous les jours, sur de nombreux sujets, fait partie de ma nature. <br>
             Si je ne suis pas derrière mon ordinateur, vous me trouverez sûrement sur les tatamis.
             </p>
-            <div class="button_hollow">
-                <a id="hire_me" href="#">Engagez moi !</a>
-            </div>
+            <a id="hire_me" class="button_hollow" href="#">Engagez moi !</a>
         </section>
     </header>
 </template>

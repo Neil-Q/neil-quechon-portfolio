@@ -50,8 +50,8 @@ a {
 
 .button_hollow {
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
+    display: block;
+    text-align: center;
     color: var(--primary-color);
     border: 1px var(--primary-color) solid;
     border-radius: 5px;
@@ -63,30 +63,20 @@ a {
     &:hover {
         background-color: var(--highlight-color);
     }
-
-    a {
-        color: var(--primary-color);
-        margin: auto;
-    }
 }
 
 .button_solid {
-    display: flex;
-    align-items: center;
+    display: block;
+    text-align: center;
     color: var(--light-color);
     border-radius: 5px;
     background-color: var(--primary-color);
     font-weight: bold;
     height: auto;
-    padding: 0em 1em;
+    padding: 0.5em 1em;
 
     &:hover {
         background-color: var(--primary-color-soft);
-    }
-
-    a {
-        color: var(--primary-color);
-        margin: auto;
     }
 }
 
