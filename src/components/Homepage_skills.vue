@@ -69,6 +69,7 @@ export default {
         box-sizing: border-box;
         //border: black 1px solid;
         padding: 3em 0;
+        transition: 0.3s;
 
         svg {
             width: clamp(3em, 20vw, 5em);
