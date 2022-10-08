@@ -1,6 +1,6 @@
 <template>
     <header>
-        <canvas></canvas>
+        <canvas id="fog_canvas"></canvas>
         <section class="hero">
             <p class="text_colorized" id="hello_world">&lt;hello world&gt;</p>
             <h1>Je suis <span class="text_colorized">Neil</span></h1>
@@ -14,8 +14,72 @@
 </template>
 
 <script>
+
+class Particle {
+    constructor(canvas) {
+        this.canvas = canvas;
+        this.x = Math.round(this.canvas.width * Math.random());
+        this.y = Math.round(this.canvas.height * Math.random());
+        this.energy = Math.random();
+        this.opacity =  Math.floor(256 * (this.energy * 0.3 + 0.1));
+        //this.velocity = this.energy / 10;
+        //this.direction = 360 * Math.random(); 
+    }
+}
+
 export default {
-    name: "HomepageHeader"
+    name: "HomepageHeader",
+
+    methods: {
+        drawParticle(particle, canvasWidth, datas) {
+            let index = (particle.x + (particle.y * canvasWidth)) * 4;
+
+            datas[index + 0] = 0;
+            datas[index + 1] = 0;
+            datas[index + 2] = 0;
+            datas[index + 3] = particle.opacity;
+        },
+
+        generateParticules(canvas, pixelsPerParticule) {
+            //let numberOfParticles = canvas.height * canvas.width / pixelsPerParticule;
+            let numberOfParticles = pixelsPerParticule;
+            let particles = [];
+
+            for(let i = 0; i < numberOfParticles; i++) {
+                let newParticle = new Particle(canvas);
+                particles.push(newParticle);
+            }
+
+            return particles;
+        },
+
+        resizeCanvas(canvas) {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        },
+
+        updateCanvas(ctx, data) {
+            ctx.putImageData(data, 0, 0);
+        }
+    },
+
+    mounted() {
+        let fogCanvas = document.getElementById("fog_canvas");
+        this.resizeCanvas(fogCanvas); // Sans cela le canvas aurait sa valeur par defaut
+
+        let ctx = fogCanvas.getContext("2d");
+        let canvasDatas = ctx.getImageData(0, 0, fogCanvas.width, fogCanvas.height);
+
+        let particules = this.generateParticules(fogCanvas, 100000);        
+
+        particules.forEach((particule) => {
+            this.drawParticle(particule, fogCanvas.width, canvasDatas.data)
+        });
+
+        this.updateCanvas(ctx, canvasDatas);
+
+
+    }
 }
 </script>
 
