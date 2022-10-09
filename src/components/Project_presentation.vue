@@ -154,7 +154,7 @@ export default {
         }
 
         .reversed {
-            h {
+            h4 {
                 text-align: right;
             }
 

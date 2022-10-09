@@ -29,7 +29,7 @@ a {
     --font-sz-md: 1em;
     --font-sz-lg: 1.1em;
     --font-sz-xl: 1.2em;
-    --font-sz-xxl: 1.3em;
+    --font-sz-xxl: 1.4em;
 
     --light-color: #F8F5F5;
     --light-highlight-color: #ffffff;

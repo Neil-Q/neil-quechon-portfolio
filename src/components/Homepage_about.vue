@@ -10,7 +10,7 @@
                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <p class="text_colorized">En savoir plus -></p>
             </div>
-            <div id="temp_picture">
+            <div id="profil_picture">
             </div>
         </div>
     </section>
@@ -25,8 +25,18 @@ export default {
 <style lang="scss">
 
     #about {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h4 {
+            font-size: var(--font-sz-lg);
+        }
+
         p {
             text-align: justify;
+            font-size: var(--font-sz-md);
         }
     }
 
@@ -42,10 +52,22 @@ export default {
         margin: auto 0;
     }
 
-    #temp_picture {
-        height: 24em;
-        width: 18em;
+    #profil_picture {
+        aspect-ratio: 3/4;
+        width: 35%;
         background-color: grey;
+    }
+
+    @media (min-width: 40em) {
+        #about {
+            h4 {
+                font-size: var(--font-sz-xl);
+            }
+
+            p {
+                font-size: var(--font-sz-lg);
+            }
+        }
     }
 
     @media (min-width: 60em) {
@@ -55,6 +77,15 @@ export default {
 
             h3 {
                 padding-left: 3em;
+                margin-bottom: 2em;
+            }
+
+            h4 {
+                font-size: var(--font-sz-xxl);
+            }
+
+            p {
+                font-size: var(--font-sz-xl);
             }
         }
 
@@ -64,7 +95,7 @@ export default {
         }
 
         #about_presentation_text {
-            max-width: 60%;
+            max-width: 55%;
         }
     }
 
