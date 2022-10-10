@@ -6,16 +6,16 @@
         <div id="wide_nav">
             <ol>
                 <li>
-                    <a href="#">A propos</a>
+                    <a @click="scrollToAnchorPoint('about')">A propos</a>
                 </li>
                 <li>
-                    <a href="#">Compétences</a>
+                    <a @click="scrollToAnchorPoint('skills')">Compétences</a>
                 </li>
                 <li>
-                    <a href="#">Projets</a>
+                    <a @click="scrollToAnchorPoint('projects')">Projets</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a @click="scrollToAnchorPoint('contact')">Contact</a>
                 </li>
             </ol>
             <a class="button_hollow cv-button" href="#">Mon CV</a>
@@ -65,6 +65,11 @@ export default {
             let nav_bar = document.getElementById("nav_bar");
             if(toggle) nav_bar.classList.add("opaque", "shadow_boxed_light");
             else nav_bar.classList.remove("opaque", "shadow_boxed_light");
+        },
+
+        scrollToAnchorPoint(anchorId) {
+            let el = document.getElementById(anchorId);
+            el.scrollIntoView({ behavior: 'smooth'});
         },
 
         showNavBar() {
@@ -178,6 +183,7 @@ export default {
             display: flex;
             margin-right: clamp(0.6em, 2vw, 2.5em);
             counter-increment: nav-link;
+            cursor: pointer;
 
             a {
                 padding: 10px;

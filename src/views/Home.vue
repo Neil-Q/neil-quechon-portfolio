@@ -29,7 +29,7 @@
         </main>
     </div>
     <footer>
-        <p>CODE ET DESIGN PAR <b>NEIL QUECHON</b> 2022</p>
+        <p>CODE ET DESIGN AVEC ❤ PAR <b>NEIL QUECHON</b> 2022</p>
     </footer>
 </template>
 
@@ -104,7 +104,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-height: 100vh;
+        min-height: calc(100vh - var(--footer-height));
     }
 
     main {
@@ -116,7 +116,7 @@
 
     h3 {
         font-size: clamp(2em, 3vw, 2.5em);
-        border: black solid 1px;
+        //border: black solid 1px;
         margin-top: calc(var(--navbar-height) + 1em);
         margin-bottom: 2em;
         width: auto;
@@ -127,7 +127,7 @@
         flex-direction: column;
         justify-content: space-around;
         font-size: var(--font-sz-sm);
-        height: 4em;
+        height: var(--footer-height);
         width: 100%;
         background-color: var(--primary-color-soft);
         color: var(--light-color);
@@ -137,10 +137,6 @@
     @media(min-width: 40em) {
         #content {
             padding: 0 2em;
-        }
-
-        section {
-            border: 1px black solid;
         }
     }
 </style>

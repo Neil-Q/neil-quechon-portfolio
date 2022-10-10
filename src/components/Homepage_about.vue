@@ -4,11 +4,11 @@
 
         <div id="about_presentation">
             <div id="about_presentation_text">
-                <h4>Titre Lorem Ipsum</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p class="text_colorized">En savoir plus -></p>
+                <h4>J'aime créer des outils beaux et interactifs !</h4>
+                <p>Hello, je m'appelle Neil Quéchon ! Après un premier cursus dans l'électrotechnique, j'ai décidé de changer de voie et me reconvertir dans le développement web... domaine qui m'a toujours attiré et me permet de réellement exprimer ma créativité.</p>
+                <p>C'est ainsi que j'ai fait le choix et pari risqué, mais valant le coup, de me former en autonomie. Pour ce faire, j'ai appris par la mise en pratique sur divers projets toujours plus challengeants et ambitieux.</p>
+                <p>J'ai hâte de faire le grand saut et de continuer à faire progresser mes compétences auprès de la bonne équipe.</p>
+                <a class="text_colorized" href="#">En savoir plus -></a>
             </div>
             <div id="profil_picture">
             </div>
@@ -32,11 +32,17 @@ export default {
 
         h4 {
             font-size: var(--font-sz-lg);
+            //color: var(--primary-color);
         }
 
-        p {
+        p, a {
             text-align: justify;
             font-size: var(--font-sz-md);
+        }
+
+        a:hover {
+            font-weight: bold;
+            color: var(--primary-color-soft);
         }
     }
 
@@ -64,7 +70,7 @@ export default {
                 font-size: var(--font-sz-xl);
             }
 
-            p {
+            p, a {
                 font-size: var(--font-sz-lg);
             }
         }
@@ -84,7 +90,7 @@ export default {
                 font-size: var(--font-sz-xxl);
             }
 
-            p {
+            p, a {
                 font-size: var(--font-sz-xl);
             }
         }

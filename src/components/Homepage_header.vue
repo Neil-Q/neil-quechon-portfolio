@@ -74,7 +74,12 @@ export default {
         font-size: var(--font-sz-lg);
     }
 
-    @media (max-width: 1920px) {
+    @media (min-width: 60em) {
+        .hero {
+            p {
+                font-size: var(--font-sz-lg);
+            }
+        }
     }
 
 </style>

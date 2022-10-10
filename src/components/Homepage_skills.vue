@@ -89,7 +89,6 @@ export default {
         width: 100%;
         min-height: 100vh;
         font-weight: bold;
-        border: 1px solid black;
     }
 
     #skills_list {

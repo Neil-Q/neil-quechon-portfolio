@@ -19,6 +19,7 @@ a {
     color: var(--contrast-color);
     width: 100%;
     font-size: var(--font-sz-md);
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -46,6 +47,7 @@ a {
     --dark-contrast-color-soft: #CCD6F6;
 
     --navbar-height: 70px;
+    --footer-height: 4em;
 }
 
 .button_hollow {
@@ -118,6 +120,8 @@ a {
         --contrast-color: var(--light-contrast-color);
         --contrast-color-soft: var(--light-contrast-soft-color);
         --highlight-color: var(--light-highlight-color);
+
+
     }
 }
 
