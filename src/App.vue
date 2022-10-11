@@ -36,13 +36,11 @@ a {
 
 :root {
     --font-sans: "Poppins", "Open Sans", sans-serif;
-    --font-sz-xxs: 0.8em;
-    --font-sz-xs: 0.85em;
-    --font-sz-sm: 0.9em;
-    --font-sz-md: 1em;
-    --font-sz-lg: 1.1em;
-    --font-sz-xl: 1.2em;
-    --font-sz-xxl: 1.4em;
+    --font-sz-sm: 0.85em;
+    --font-sz-md: 0.9em;
+    --font-sz-lg: 1em;
+    --font-sz-xl: 1.1em;
+    --font-sz-xxl: 1.3em;
 
     --light-color: #F8F5F5;
     --light-highlight-color: #ffffff;
@@ -145,6 +143,26 @@ a {
         --contrast-color: var(--dark-contrast-color);
         --contrast-color-soft: var(--dark-contrast-soft-color);
         --highlight-color: var(--dark-highlight-color);
+    }
+}
+
+@media (min-width: 40em) {
+    :root {
+        --font-sz-sm: 0.9em;
+        --font-sz-md: 1em;
+        --font-sz-lg: 1.1em;
+        --font-sz-xl: 1.2em;
+        --font-sz-xxl: 1.4em;
+    }
+}
+
+@media (min-width: 60em) {
+    :root {
+        --font-sz-sm: 1em;
+        --font-sz-md: 1.1em;
+        --font-sz-lg: 1.4em;
+        --font-sz-xl: 1.7em;
+        --font-sz-xxl: 2em;
     }
 }
 </style>

@@ -37,9 +37,6 @@ export default {
             type: Boolean,
             default: false
         }
-    },
-    mounted () {
-        console.log(this.withText)
     }
 }
 </script>
@@ -112,9 +109,7 @@ export default {
 
     #coffee_cup {
         width: 8em;
-        //background-color: grey;
         margin: auto;
-        //color: var(--primary-color);
         color: var(--contrast-color-soft);
     }
 
@@ -127,21 +122,9 @@ export default {
             border: none;
             min-width: 50%;
             text-align: left;
-            font-size: var(--font-sz-lg);
 
             h4 {
                 margin-top: 0;
-                font-size: var(--font-sz-lg);
-            }
-        }
-    }
-
-    @media(min-width: 60em) {
-        #coffee_text {
-            font-size: var(--font-sz-xl);
-
-            h4 {
-                font-size: var(--font-sz-xl);
             }
         }
     }

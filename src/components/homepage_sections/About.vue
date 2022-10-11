@@ -64,18 +64,6 @@ export default {
         background-color: grey;
     }
 
-    @media (min-width: 40em) {
-        #about {
-            h4 {
-                font-size: var(--font-sz-xl);
-            }
-
-            p, a {
-                font-size: var(--font-sz-lg);
-            }
-        }
-    }
-
     @media (min-width: 60em) {
         #about {
             text-align: left;
@@ -84,14 +72,6 @@ export default {
             h3 {
                 padding-left: 3em;
                 margin-bottom: 2em;
-            }
-
-            h4 {
-                font-size: var(--font-sz-xxl);
-            }
-
-            p, a {
-                font-size: var(--font-sz-xl);
             }
         }
 

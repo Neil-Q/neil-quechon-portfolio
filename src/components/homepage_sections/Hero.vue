@@ -24,7 +24,6 @@ export default {
         display: flex;
         width: 100%;
         height: 100vh;
-        
         top: 0;
     }
 
@@ -60,6 +59,7 @@ export default {
         p {
             max-width: 50em;
             margin-bottom: 2em;
+            font-size: var(--font-sz-md);
         }
     }
 
@@ -71,15 +71,7 @@ export default {
 
     #hire_me {
         padding: 10px 20px;
-        font-size: var(--font-sz-lg);
-    }
-
-    @media (min-width: 60em) {
-        .hero {
-            p {
-                font-size: var(--font-sz-lg);
-            }
-        }
+        font-size: var(--font-sz-md);
     }
 
 </style>

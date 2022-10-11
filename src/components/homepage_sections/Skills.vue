@@ -62,7 +62,6 @@ export default {
         width: 50%;
         margin-bottom: 3em;
         box-sizing: border-box;
-        //border: black 1px solid;
         padding: 3em 0;
         transition: 0.3s;
 

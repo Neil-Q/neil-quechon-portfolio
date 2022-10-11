@@ -89,6 +89,7 @@ export default {
 
     #case_study_link {
         margin: auto 1em auto 0;
+        font-size: var(--font-sz-sm);
     }
 
     .live_site_link, .git_link{
@@ -169,7 +170,6 @@ export default {
             }
 
             .tags_list, .links_container {
-                //flex-direction: row-reverse;
                 justify-content: flex-end;
             }
         }
