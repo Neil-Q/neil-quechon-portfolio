@@ -3,7 +3,7 @@
         <div class="logo">
             <a href="#" id="logo"></a>
         </div>
-        <div id="wide_nav">
+        <div id="nav_menu">
             <ol>
                 <li>
                     <a @click="scrollToAnchorPoint('about')">A propos</a>
@@ -18,38 +18,17 @@
                     <a @click="scrollToAnchorPoint('contact')">Contact</a>
                 </li>
             </ol>
-            <a class="button_hollow cv-button" href="#">Mon CV</a>
+            <a id="cv_button" class="button_hollow" href="#">Mon CV</a>
         </div>
-        <button id="burger_nav" v-on:click="toggleOverlayNavigation">
+        <button id="nav_burger" v-on:click="toggleOverlayNavigation">
             <div></div>
             <div></div>
             <div></div>
         </button>
     </nav>
 
-    <nav id="nav_overlay">
-        <div id="gaussian_blur">
-        </div>
-        <div id="overlay_menu">
-            <ol>
-                <li>
-                    <a href="#">A propos</a>
-                </li>
-                <li>
-                    <a href="#">Compétences</a>
-                </li>
-                <li>
-                    <a href="#">Projets</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ol>
-            <div class="button_hollow cv-button">
-                <a href="#">Mon CV</a>
-            </div>
-        </div>
-    </nav>
+    <div id="blur_overlay">
+    </div>
 </template>
 
 <script>
@@ -70,6 +49,8 @@ export default {
         scrollToAnchorPoint(anchorId) {
             let el = document.getElementById(anchorId);
             el.scrollIntoView({ behavior: 'smooth'});
+
+            this. toggleOverlayNavigation();
         },
 
         showNavBar() {
@@ -78,14 +59,24 @@ export default {
         },
 
         toggleOverlayNavigation() {
-            let navOverlay = document.getElementById("nav_overlay");
+            let navOverlay = document.getElementById("nav_menu");
             navOverlay.classList.toggle("reveal");
-            //let gaussianBlur = document.getElementById("gaussian_blur");
-            //gaussianBlur.classList.toggle("reveal");
+            let gaussianBlur = document.getElementById("blur_overlay");
+            gaussianBlur.classList.toggle("reveal");
 
-            let burger = document.getElementById("burger_nav");
+            let burger = document.getElementById("nav_burger");
             burger.classList.toggle("checked");
         },
+
+        closeOverlayNavigation() {
+            let navOverlay = document.getElementById("nav_menu");
+            navOverlay.classList.remove("reveal");
+            let gaussianBlur = document.getElementById("blur_overlay");
+            gaussianBlur.classList.remove("reveal");
+
+            let burger = document.getElementById("nav_burger");
+            burger.classList.remove("checked");
+        }
 
     },
     mounted() {
@@ -110,6 +101,7 @@ export default {
 
 <style lang="scss" scoped>
 
+    // Developpé wide-screen-first car le menu burger rend la complexité du composant plus élevée du côté mobile
 
     #nav_bar {
         display: flex;
@@ -133,27 +125,7 @@ export default {
         }
     }
 
-    #nav_overlay {
-        position: fixed;
-        visibility: hidden;
-        z-index: 11;
-        width: 100%;
-        height: 100%;
-
-        &.reveal {
-            visibility: visible;
-
-            #gaussian_blur {
-                opacity: 1;
-            }
-
-            #overlay_menu {
-                transform: translateX(0);
-            }
-        }
-    }
-
-    .cv-button {
+    #cv_button {
         margin-left: 25px;
         text-align: center;
         padding: 0.3em 2.5em;
@@ -168,10 +140,12 @@ export default {
         border-radius: 25px;
     }
 
-    #wide_nav {
-        display: none;
-        align-items: center;
+    #nav_menu {
+        display: flex;
         flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-size: var(--font-sz-sm);
 
         ol {
             display: flex;
@@ -201,8 +175,8 @@ export default {
         }
     }
 
-    #burger_nav {
-        display: flex;
+    #nav_burger {
+        display: none;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
@@ -237,7 +211,7 @@ export default {
         }
     }
 
-    #gaussian_blur {
+    #blur_overlay {
         position: fixed;
         z-index: 9;
         width: 100%;
@@ -247,22 +221,8 @@ export default {
         opacity: 0;
     }
 
-    #overlay_menu {
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        right: 0;
-        width: 30em;
-        height: 100%;
-        background-color: var(--highlight-color);
-        z-index: 10;
-        transition: 0.25s;
-        transform: translateX(30em);
-    }
-
     @media (hover: hover) {
-        #burger_nav {
+        #nav_burger {
             div {
                 background-color: var(--primary-color-soft);
             }
@@ -286,17 +246,47 @@ export default {
         }
     }
 
-    @media (min-width: 60em) {
-        #wide_nav {
+    @media (max-width: 60em) {
+        #nav_menu {
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            z-index: -20;
+            width: 20em;
+            max-width: 100vw;
+            right: 0;
+            top: var(--navbar-height);
+            height: calc(100vh - var(--navbar-height));
+            background-color: var(--highlight-color);
+            transition: 0.25s;
+            transform: translateX(30em);
+            font-size: var(--font-sz-xxl);
+
+            ol {
+                flex-direction: column;
+                padding-inline-start: 0;
+                font-size: clamp(1.5em, 5vw, 2em);
+            }
+
+            li {
+                margin-bottom: 1em;
+            }
+
+            &.reveal {
+                transform: translateX(0);
+            }
+        }
+
+        #nav_burger {
             display: flex;
         }
 
-        #burger_nav {
-            display: none;
+        #blur_overlay.reveal {
+            opacity: 1;
         }
 
-        #nav_overlay, #nav_overlay.reveal {
-            display: none;
+        #cv_button {
+            margin-left: 0;
         }
     }
 </style>
