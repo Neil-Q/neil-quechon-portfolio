@@ -53,11 +53,6 @@
 export default {
     name:"HomepageSkills"
 }
-/*
-            <div class="skill_item">
-                <figcaption></figcaption>
-            </div>
-*/
 </script>
 
 <style lang="scss">
