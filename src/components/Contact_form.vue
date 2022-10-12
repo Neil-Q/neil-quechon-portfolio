@@ -60,7 +60,7 @@ export default {
         }
     }
 
-    input, textarea {
+    #name, #mail_adress, #message {
         display: block;
         box-sizing: border-box;
         border: none;
@@ -68,9 +68,11 @@ export default {
         font-family: var(--font-sans);
         font-size: 1em;
         margin-bottom: 1em;
-        padding: 0em 1em;
+        padding: 0.5em 1em;
         width: 100%;
         caret-color: var(--primary-color-soft);
+        background-color: var(--highlight-color);
+        color: var(--contrast-color);
 
         &:focus {
             outline: none;
@@ -93,9 +95,10 @@ export default {
     }
 
     #submit_button {
+        min-height: auto;
         width: auto;
         margin: auto;
-        padding: 0 2em;
+        padding: 0.7em 2em;
     }
 
     #coffee_text {

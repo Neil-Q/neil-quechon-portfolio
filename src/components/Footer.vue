@@ -15,11 +15,11 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        font-size: var(--font-sz-sm);
+        font-size: var(--font-sz-xs);
         height: var(--footer-height);
         width: 100%;
         background-color: var(--primary-color-soft);
-        color: var(--light-color);
+        color: var(--bg-color);
         padding: auto;
     }
 </style>

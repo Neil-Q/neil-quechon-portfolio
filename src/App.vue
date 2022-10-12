@@ -36,6 +36,7 @@ a {
 
 :root {
     --font-sans: "Poppins", "Open Sans", sans-serif;
+    --font-sz-xs: 0.8em;
     --font-sz-sm: 0.85em;
     --font-sz-md: 0.9em;
     --font-sz-lg: 1em;
@@ -50,14 +51,16 @@ a {
     --light-contrast-color-soft: #404040;
 
     --dark-color: #121E2A;
-    --dark-highlight-color: #121E2A;
-    --dark-primary-color: #1DE9B6;
-    --dark-primary-soft-color: #1DE9B6;
-    --dark-contrast-color: #E6F1FF;
-    --dark-contrast-color-soft: #CCD6F6;
+    --dark-highlight-color: #172737;
+    //--dark-primary-color: #1DE9B6;
+    //--dark-primary-soft-color: #18b38c;
+    --dark-primary-color: #17ddac;
+    --dark-primary-soft-color: #1dc79d;
+    --dark-contrast-color: #bfc9d6;
+    --dark-contrast-color-soft: #949bb3;
 
     --navbar-height: 70px;
-    --footer-height: 4em;
+    --footer-height: 3.5em;
 }
 
 body {
@@ -98,12 +101,14 @@ body {
 .button_solid {
     display: block;
     text-align: center;
-    color: var(--light-color);
+    color: var(--bg-color);
+    border: none;
     border-radius: 5px;
     background-color: var(--primary-color);
     font-weight: bold;
     height: auto;
     padding: 0.5em 1em;
+    font-size: var(--font-sz-sm);
 
     &:hover {
         background-color: var(--primary-color-soft);
