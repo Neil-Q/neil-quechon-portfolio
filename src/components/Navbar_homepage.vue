@@ -219,6 +219,7 @@ export default {
         backdrop-filter: blur(10px);
         transition: 0.25s;
         opacity: 0;
+        transform: translateX(100vw);
     }
 
     @media (hover: hover) {
@@ -283,6 +284,7 @@ export default {
 
         #blur_overlay.reveal {
             opacity: 1;
+            transform: translateX(0);
         }
 
         #cv_button {

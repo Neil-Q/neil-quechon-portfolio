@@ -9,13 +9,20 @@
             Si je ne suis pas derrière mon ordinateur, vous me trouverez sûrement sur les tatamis.
             </p>
             <a id="hire_me" class="button_hollow" href="#">Engagez moi !</a>
+
+            <DarkModeButton/>
         </section>
     </header>
 </template>
 
 <script>
+import DarkModeButton   from "@/components/Night_mode_button.vue"
+
 export default {
-    name: "HomepageHero"
+    name: "HomepageHero",
+    components: {
+        DarkModeButton
+    }
 }
 </script>
 
@@ -60,6 +67,12 @@ export default {
             max-width: 50em;
             margin-bottom: 2em;
             font-size: var(--font-sz-md);
+        }
+
+        .dark_mode_button {
+            position: absolute;
+            right: 3em;
+            bottom: 3em;
         }
     }
 

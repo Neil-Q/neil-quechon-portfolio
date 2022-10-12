@@ -60,6 +60,24 @@ a {
     --footer-height: 4em;
 }
 
+body {
+    --bg-color: var(--light-color);
+    --primary-color: var(--light-primary-color);
+    --primary-color-soft: var(--light-primary-soft-color);
+    --contrast-color: var(--light-contrast-color);
+    --contrast-color-soft: var(--light-contrast-soft-color);
+    --highlight-color: var(--light-highlight-color);
+
+    &.dark_mode {
+        --bg-color: var(--dark-color);
+        --primary-color: var(--dark-primary-color);
+        --primary-color-soft: var(--dark-primary-soft-color);
+        --contrast-color: var(--dark-contrast-color);
+        --contrast-color-soft: var(--dark-contrast-soft-color);
+        --highlight-color: var(--dark-highlight-color);
+    }
+}
+
 .button_hollow {
     box-sizing: border-box;
     display: block;
@@ -122,7 +140,7 @@ a {
     }
 }
 
-@media (prefers-color-scheme: light) {
+/*@media (prefers-color-scheme: light) {
     :root {
         --bg-color: var(--light-color);
         --primary-color: var(--light-primary-color);
@@ -144,7 +162,7 @@ a {
         --contrast-color-soft: var(--dark-contrast-soft-color);
         --highlight-color: var(--dark-highlight-color);
     }
-}
+}*/
 
 @media (min-width: 40em) {
     :root {
